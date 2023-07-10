@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  db:
+    image: postgis/postgis
+    environment:
+      - POSTGRES_DB=map
+      - POSTGRES_USER=map_user
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_PORT=5432
+
+    volumes:
+      - postgis-data:/var/lib/postgresql/data
+  web:
+    build: .
+    command: >
+            bash -c "python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+volumes:
+  postgis-data:

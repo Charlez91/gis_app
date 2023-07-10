@@ -1,5 +1,13 @@
 asgiref==3.7.2
 backports.zoneinfo==0.2.1
 Django==4.2.2
+mccabe==0.7.0
+psycopg2-binary==2.9.6
+pycodestyle==2.10.0
+pydocstyle==6.3.0
+pyflakes==3.0.1
+pylama==8.4.1
+python-dotenv==1.0.0
+snowballstemmer==2.2.0
 sqlparse==0.4.4
 typing-extensions==4.7.0
